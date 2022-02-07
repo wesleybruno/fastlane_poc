@@ -50,6 +50,8 @@ ANDROID SETUP
 
 * Para executasr alguma lane criada basta rodar o comando "fastlane nome_da_lane"
 
+Este [vídeo](https://www.youtube.com/watch?v=yZNFC6N4tkU) mostra na prática boa parte do que foi feito aqui.
+
  Possíveis erros:
 
  * JAVA_HOME: verifique se possui o java instalado e se o mesmo está nas variáveis de ambiente, cada ambiente possui uma forma diferente de verificar e adicionar.

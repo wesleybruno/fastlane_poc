@@ -3,8 +3,8 @@ default_platform(:android)
 platform :android do
   
   before_all do
-    ENV["FIREBASE_APP_TOKEN"] = "<your_project_firebase_app_token>"
-    ENV["FIREBASE_TOKEN"] = "<your_project_firebase_token>"
+    ENV["FIREBASE_APP_TOKEN"] = "1:460237585363:android:ce6e636eb8c5f00b884d26"
+    ENV["FIREBASE_TOKEN"] = "1//0hyiLICpzDrGQCgYIARAAGBESNwF-L9Ir0gdz3kCHFYrqxBjiQU9eiC4dekxyHGAaE_xp2P0p0wGJepRUEOL3ZpLZn3UyVGJdG3k"
   end
 
   desc "Deploy to Firebase"
@@ -33,7 +33,7 @@ platform :android do
       apk_path: apkPath,
       release_notes: "Fastlane App Distribution"
     )
-
+    
   end
 
 end
