@@ -1,16 +1,60 @@
-# test_fastlane
+# Fastlane POC
 
-A new Flutter project.
+Este projeto tem finalidade de mostrar como configurar o fastlane para fazer deploy automático no firebase APP_DISTRIBUTION.
 
-## Getting Started
+Para configurar o fastlane em sua maquina a documentação do mesmo indica que seja feita com o  Ruby e o Bundler.
 
-This project is a starting point for a Flutter application.
+Todo o passo a passo foi montado a partir da documentação do [Fastlane](https://docs.fastlane.tools/).
 
-A few resources to get you started if this is your first Flutter project:
+1 - Instalar Ruby
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Windows: 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* Baixe o executável [Aqui](https://www.ruby-lang.org/pt/documentation/installation/#rubyinstaller) e instale.
+
+MacOS 
+
+* Instale o [HomeBrew](https://brew.sh/index_pt-br)
+* Rode o comando "brew install ruby"
+
+2 - Instalar Bundler
+
+* Após instalar o Ruby rode o comando: 'gem install bundler'
+
+3 - Configuração
+
+ * Crie um arquivo ./Gemfile na pasta raíz de cada projeto android / ios com o conteúdo
+
+        source "https://rubygems.org"
+
+        gem "fastlane"
+
+* Rode o comando 'bundle update'. Não esqueça de adicionar os novos arquivos para o controle de versão.
+
+4 - Instalar FASTLANE 
+
+ * MacOS: Rode o comando 'brew install fastlane'
+ * MacOS/Windows/Linux: rode o comando 'sudo gem install fastlane'
+ * Rode o comando 'fastlane init', será solicitado algumas informações, basta preenche-las e continuar.
+ * Rode o comando 'fastlane test' para ver o status e se possui algum erro.
+
+
+Feito isso uma pasta "fastlane" será criada dentro do android/app ou ios/_______, iremos configurar o deploy automático modificando o arquivo Fastfile dentro delas.
+
+ANDROID SETUP
+
+1- Adicione o plugin do firebase app_distribution
+
+* Rode o comando "fastlane add_plugin firebase_app_distribution"
+* Modifique o arquivo Fastfile seguindo o exemplo neste projeto.
+
+* Para executasr alguma lane criada basta rodar o comando "fastlane nome_da_lane"
+
+ Possíveis erros:
+
+ * JAVA_HOME: verifique se possui o java instalado e se o mesmo está nas variáveis de ambiente, cada ambiente possui uma forma diferente de verificar e adicionar.
+
+
+
+
+
