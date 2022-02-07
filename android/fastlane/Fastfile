@@ -1,0 +1,39 @@
+default_platform(:android)
+
+platform :android do
+  
+  before_all do
+    ENV["FIREBASE_APP_TOKEN"] = "<your_project_firebase_app_token>"
+    ENV["FIREBASE_TOKEN"] = "<your_project_firebase_token>"
+  end
+
+  desc "Deploy to Firebase"
+  lane :deploy do |options|
+    timestamp = Time.now.strftime("%y%m%d%H")
+
+    puts "Gerando build do Android"
+
+    Dir.chdir("../..") do
+      sh "flutter build apk -t lib/main.dart --build-number=#{timestamp} --release"
+    end
+
+    puts "Fazendo upload para o App Distribution"
+      
+    distributeApkToFirebase("../build/app/outputs/apk/release/app-release.apk")
+
+  end
+  
+  def distributeApkToFirebase(apkPath)
+    puts "Enviando apk para o Firebase App Distribution"
+    puts "apk: #{apkPath}"
+    firebase_app_distribution(
+      app: ENV["FIREBASE_APP_TOKEN"],
+      groups: "hml",
+      firebase_cli_token: ENV["FIREBASE_TOKEN"],
+      apk_path: apkPath,
+      release_notes: "Fastlane App Distribution"
+    )
+
+  end
+
+end
