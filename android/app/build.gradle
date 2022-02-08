@@ -58,6 +58,27 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    flavorDimensions "default"
+    productFlavors {
+        development {
+            dimension "default"
+            applicationIdSuffix ".dev"
+            resValue 'string', 'app_name', '[DEV] FastlanePoc'
+        }
+        homologation {
+            dimension "default"
+            applicationIdSuffix ".hml"
+            resValue 'string', 'app_name', '[HML] FastlanePoc'
+        }
+        production {
+            dimension "default"
+            applicationIdSuffix ""
+            resValue 'string', 'app_name', '[PROD] FastlanePoc'
+        }
+    }
+
+
 }
 
 flutter {

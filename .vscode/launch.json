@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "[DEV] Flutter",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=API_URL=dev.api.com.br",
+                "--flavor",
+                "development"
+            ],
+            "program": "lib/main_development.dart"
+        },
+        {
+            "name": "[HML] Flutter",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=API_URL=hml.api.com.br",
+                "--flavor",
+                "homologation"
+            ],
+            "program": "lib/main_homologation.dart"
+        },
+        {
+            "name": "Flutter",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=API_URL=prod.api.com.br",
+                "--flavor",
+                "production"
+            ],
+            "program": "lib/main_production.dart"
+        }
+    ]
+}
