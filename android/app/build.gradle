@@ -74,7 +74,7 @@ android {
         production {
             dimension "default"
             applicationIdSuffix ""
-            resValue 'string', 'app_name', '[PROD] FastlanePoc'
+            resValue 'string', 'app_name', 'FastlanePoc'
         }
     }
 
