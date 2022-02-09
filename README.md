@@ -1,4 +1,22 @@
-# Fastlane POC
+# POC
+
+## Flavors BuildTypes
+
+Para configurar flavors no seu projeto recomendo que assista o seguinte [vídeo](https://www.youtube.com/watch?v=Vhm1Cv2uPko).
+
+Além dos Flavors é possível utilizar o Dart-Define na linha de comando para passar valores como está feito neste projeto. Caso não tenha necessidade de criar versões diferentes do app, para cada flavor o dart-define é uma maneira mais simples de resolver esse problema, abaixo está um exemplo de como declarar uma variável e como recupera-la.
+
+        Command line:
+
+        flutter run --dart-define=ENV=FLUTTER_APP_ENV --dart-define=APP_NAME=FLUTTER_APP_NAME
+
+        Flutter App:
+        
+        const ENV = String.fromEnvironment('ENV'); // FLUTTER_APP_ENV
+        const APP_NAME = String.fromEnvironment('APP_NAME'); // FLUTTER_APP_NAME
+
+
+## Fastlane
 
 Este projeto tem finalidade de mostrar como configurar o fastlane para fazer deploy automático no firebase APP_DISTRIBUTION.
 
